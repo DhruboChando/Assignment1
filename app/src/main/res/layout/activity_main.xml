@@ -1,48 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="20dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="180dp"
-        android:src="@drawable/luck"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="20dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+        android:src="@drawable/luckynumber"/>
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_there_wanna_try_your_luck_nchoose_a_number"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:padding="6dp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btnNumber1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:id="@+id/btnNumber2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_7"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:id="@+id/btnNumber3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_13"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:id="@+id/btnNumber4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_39"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_background"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="30dp">
+
+        <Button
+            android:id="@+id/btnNumber5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_111"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:id="@+id/btnNumber6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_734"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:id="@+id/btnNumber7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1300"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_background"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tips_the_number_divisable_by_7_are_considered_to_be_lucky_number"
+        android:textSize="16sp"
         android:padding="6dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/tv_hello"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:hint="Enter lucky number"
-        android:textColor="@color/black"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/et_number"/>
-
-    <Button
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:text="Enter"
-        android:textSize="20dp"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:id="@+id/btn_enter"/>
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:background="@drawable/tips_background"/>
 
 </LinearLayout>

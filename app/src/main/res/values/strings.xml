@@ -3,4 +3,15 @@
     <string name="upload_image_here">Upload image here</string>
     <string name="default_image">Default Image</string>
     <string name="change">Change</string>
+    <string name="hello_there_wanna_try_your_luck_nchoose_a_number"><![CDATA[Hello there ! Wanna try your Luck ?\nChoose a Number -->]]></string>
+    <string name="_1">1</string>
+    <string name="_7">7</string>
+    <string name="_13">13</string>
+    <string name="_39">42</string>
+    <string name="_111">111</string>
+    <string name="_734">777</string>
+    <string name="_1300">1300</string>
+    <string name="tips_the_number_divisible_by_7_are_considered_to_be_lucky_number">Tips: The number divisable by 7 are considered to be Lucky number .</string>
+    <string name="congrats_you_are_very_lucky">Congrats! You are very Lucky!</string>
+    <string name="tips_the_number_divisable_by_7_are_considered_to_be_lucky_number">Tips: The number divisable by 7 are considered to be Lucky number .</string>
 </resources>

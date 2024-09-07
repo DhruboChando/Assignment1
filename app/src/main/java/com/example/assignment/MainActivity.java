@@ -1,67 +1,70 @@
 package com.example.assignment;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 public class MainActivity extends AppCompatActivity {
-    TextView tv1;
-    Toast toast;
-    Button enter;
-    EditText number_box;
-    int lucky_number = 1001;
-    String input_number;
 
-    @SuppressLint("MissingInflatedId")
+    private TextView tvResult;
+    private Button btnNumber1, btnNumber2, btnNumber3, btnNumber4, btnNumber5, btnNumber6, btnNumber7;
+    private Toast toast;
     @Override
+    @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv1 = findViewById(R.id.tv_hello);
-        number_box = findViewById(R.id.et_name);
-        enter = findViewById(R.id.btn_enter);
+        tvResult = findViewById(R.id.tvResult);
+        btnNumber1 = findViewById(R.id.btnNumber1);
+        btnNumber2 = findViewById(R.id.btnNumber2);
+        btnNumber3 = findViewById(R.id.btnNumber3);
+        btnNumber4 = findViewById(R.id.btnNumber4);
+        btnNumber5 = findViewById(R.id.btnNumber5);
+        btnNumber6 = findViewById(R.id.btnNumber6);
+        btnNumber7 = findViewById(R.id.btnNumber7);
 
-        LayoutInflater li = getLayoutInflater(); //Creating the LayoutInflater instance
-        //Getting the View object as defined in the customtoast.xml file
+        LayoutInflater li = getLayoutInflater();
         View layout = li.inflate(R.layout.custom_toast, findViewById(R.id.custom_toast_layout));
         toast = new Toast(getApplicationContext()); //Creating the Toast object
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.setView(layout);//setting the view of custom toast layout
 
-        Intent intent = getIntent();
-        String name1 = intent.getStringExtra("name");
-
-        tv1.setText("Hello " + name1 + "!\nReady to test your luck!!! Ha..ah\nEnter your Lucky number ");
-
-        enter.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                input_number = number_box.getText().toString().trim();
-
-                if(!input_number.isEmpty() && input_number.equals(lucky_number)){
-                    number_box.setText("");
-                    toast.show();
-                }
-
+                Button button = (Button) v;
+                int number = Integer.parseInt(button.getText().toString());
+                checkLuckyNumber(number);
             }
-        });
+        };
 
+        btnNumber1.setOnClickListener(listener);
+        btnNumber2.setOnClickListener(listener);
+        btnNumber3.setOnClickListener(listener);
+        btnNumber4.setOnClickListener(listener);
+        btnNumber5.setOnClickListener(listener);
+        btnNumber6.setOnClickListener(listener);
+        btnNumber7.setOnClickListener(listener);
     }
 
+    @SuppressLint("SetTextI18n")
+    private void checkLuckyNumber(int number) {
+        if (number % 7 == 0) {
+            toast.show();
+        } else {
+            Toast.makeText(MainActivity.this, "Sorry!\nBetter Luck next time .", Toast.LENGTH_LONG).
+                    show();
+
+            tvResult.setVisibility(View.VISIBLE);
+        }
+    }
 }
