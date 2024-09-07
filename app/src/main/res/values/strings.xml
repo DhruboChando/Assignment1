@@ -3,7 +3,7 @@
     <string name="upload_image_here">Upload image here</string>
     <string name="default_image">Default Image</string>
     <string name="change">Change</string>
-    <string name="hello_there_wanna_try_your_luck_nchoose_a_number"><![CDATA[Hello there ! Wanna try your Luck ?\nChoose a Number -->]]></string>
+    <string name="hello_there_wanna_try_your_luck_nchoose_a_number"><![CDATA[Hello there ! Wanna try your Luck ?\nClick on a Number -->]]></string>
     <string name="_1">1</string>
     <string name="_7">7</string>
     <string name="_13">13</string>
