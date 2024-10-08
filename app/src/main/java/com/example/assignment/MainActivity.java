@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private void checkLuckyNumber(int number) {
         if (number % 7 == 0) {
             toast.show();
+            tvResult.setVisibility(View.GONE);
         } else {
             Toast.makeText(MainActivity.this, "Sorry!\nBetter Luck next time .", Toast.LENGTH_LONG).
                     show();
